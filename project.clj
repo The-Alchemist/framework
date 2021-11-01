@@ -23,15 +23,12 @@
                  [garden "1.3.10"]
                  [hickory "0.7.1"]
                  [hiccup "1.0.5"]
-                 [funcool/cuerdas "RELEASE"]]
-  :plugins [[lein-tools-deps "0.4.5"]]
-  :middleware [lein-tools-deps.plugin/resolve-dependencies-with-deps-edn]
-  :lein-tools-deps/config {:config-files [:install :user :project]}
-
+                 [funcool/cuerdas "RELEASE"]
+                 [com.wsscode/tailwind-garden "2021.04.09"]
+                 [com.wsscode/pathom3 "2021.10.20-alpha"]]
   :source-paths ["src"]
   :target "target/%s/"
-  :profiles {:dev      {:resource-paths         ["config/dev"]
-                        :lein-tools-deps/config {:config-files [:install :user :project]}}
+  :profiles {:dev      {:resource-paths         ["config/dev"]}
              :local    {:resource-paths ["config/local"]}
              :prod     {:resource-paths ["config/prod"]}
              :cljstyle {:dependencies []}
