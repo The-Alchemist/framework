@@ -1,4 +1,4 @@
-(ns xiana.tailwind-helpers
+(ns xiana.tailwind.helpers
   (:require
     [clojure.string :as s]
     [com.wsscode.tailwind-garden.expanders :as exp]

@@ -4,17 +4,17 @@
     [clojure.set :as st]
     [garden.core :as garden]
     [garden.stylesheet]
-    [xiana.tailwind-helpers :as hlp]
-    [xiana.tailwind-preparers :as prep]
-    [xiana.tailwind-resolvers :as rlv]))
+    [xiana.tailwind.helpers :as hlp]
+    [xiana.tailwind.preparers :as prep]
+    [xiana.tailwind.resolvers :as rlv]))
 
 (defn result-css-map
   [user-col]
   (-> (hash-map)
       (assoc-in [:defaults] (-> rlv/smart-css-map
                                 :default-components))
-      (assoc-in  [:bases] (select-keys (-> rlv/smart-css-map
-                                           :bases) user-col))
+      (assoc-in [:bases] (select-keys (-> rlv/smart-css-map
+                                          :bases) user-col))
       (assoc-in [:bases:sm] (select-keys (-> rlv/smart-css-map
                                              :bases:sm) user-col))
       (assoc-in [:bases:md] (select-keys (-> rlv/smart-css-map
@@ -63,7 +63,7 @@
 (defn group-sm:queries
   [{:keys [bases:sm]}]
   (if-not (empty? bases:sm)
-    (garden.stylesheet/at-media {:screen true
+    (garden.stylesheet/at-media {:screen    true
                                  :min-width "640px"}
                                 (reduce into [] (for [v (vals bases:sm)]
                                                   [(hlp/extract-garden-element v)])))
@@ -73,7 +73,7 @@
   [{:keys [bases:md]}]
   (if-not (empty? bases:md)
     (garden.stylesheet/at-media {:min-width "768px"
-                                 :screen true}
+                                 :screen    true}
                                 (reduce into [] (for [v (vals bases:md)]
                                                   [(hlp/extract-garden-element v)])))
     {}))

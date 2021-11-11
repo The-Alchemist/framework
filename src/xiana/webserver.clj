@@ -4,7 +4,7 @@
     [xiana.config :as config]
     [xiana.context :as context]
     [xiana.core :as xiana]
-    [xiana.interceptor-queue :as interceptor.queue]
+    [xiana.interceptor.queue :as interceptor.queue]
     [xiana.route :as route])
   (:import
     (org.eclipse.jetty.server

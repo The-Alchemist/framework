@@ -1,4 +1,4 @@
-(ns xiana.interceptor-wrapper
+(ns xiana.interceptor.wrapper
   (:require
     [xiana.core :refer [ok error]]))
 

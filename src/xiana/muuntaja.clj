@@ -7,7 +7,7 @@
     [muuntaja.format.core]
     [muuntaja.format.json :as json]
     [muuntaja.interceptor]
-    [xiana.interceptor-wrapper :as wrap]))
+    [xiana.interceptor.wrapper :as wrap]))
 
 (defn xml-encoder
   "XML encoder."
